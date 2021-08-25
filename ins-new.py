@@ -11,6 +11,9 @@ print(secretkey)
 client = boto3.client('ec2',region_name=region,aws_access_key_id=accesskey,aws_secret_access_key=secretkey)
 
 data1 = client.describe_instances()
+print('Connection Got')
 for data2 in data1["Reservations"]:
+	print('got list of instances')
 	for data13 in data2["Instances"]:
 		print(data13)
+	print('Listing done')
